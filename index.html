@@ -3,33 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Solverive | Smart Automation & Digital Marketing</title>
-  <meta name="description" content="Solverive: AI Solutions for automation and digital marketing designed for businesses of all sizes." />
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+
+  <title>Solverive | AI Automation & Digital Marketing that drives growth</title>
+  <meta name="description" content="Solverive makes AI simple: automation, digital marketing and advisory for companies of all sizes. Launch fast, scale safely, measure impact." />
+  <link rel="canonical" href="https://solverive.com/">
+
+  <!-- SEO / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://solverive.com/">
+  <meta property="og:title" content="Solverive | AI Automation & Digital Marketing">
+  <meta property="og:description" content="AI made simple for businesses: automation, digital marketing, advisory.">
+  <meta property="og:image" content="https://solverive.com/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Solverive | AI Automation & Digital Marketing">
+  <meta name="twitter:description" content="AI made simple for businesses: automation, digital marketing, advisory.">
+  <meta name="twitter:image" content="https://solverive.com/og-image.jpg">
+  <meta name="robots" content="index,follow">
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
   <style>
-    :root{--bg:#0b1020;--bg-alt:#0f1530;--primary:#7c3aed;--secondary:#06b6d4;--text:#e5e7eb;--muted:#b2b7c3;--card:#11162a;--glass:rgba(255,255,255,.06);--ring:rgba(124,58,237,.35)}
+    :root{
+      --bg:#0b1020;--bg-alt:#0f1530;--primary:#7c3aed;--secondary:#06b6d4;
+      --text:#e5e7eb;--muted:#b2b7c3;--card:#11162a;--glass:rgba(255,255,255,.06);--ring:rgba(124,58,237,.35)
+    }
     *{box-sizing:border-box}
+    html:focus-within{scroll-behavior:smooth}
     body{
-      margin:0;font-family:Inter,system-ui;line-height:1.6;color:var(--text);
+      margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell;
+      line-height:1.6;color:var(--text);
       background:
         radial-gradient(900px 500px at 90% -10%, rgba(124,58,237,.18), transparent),
         radial-gradient(800px 500px at 10% 0%, rgba(6,182,212,.14), transparent),
         linear-gradient(180deg,var(--bg),var(--bg-alt));
       overflow-x:hidden;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
     a{color:inherit;text-decoration:none}
-
     .container{max-width:1100px;margin:0 auto;padding-inline:28px}
     @media (min-width:768px){.container{padding-inline:40px}}
     .container-edge-safe{padding-inline:max(28px,env(safe-area-inset-left))}
 
+    /* Skip link */
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:16px;top:12px;width:auto;height:auto;z-index:1000;background:#11162a;color:white;padding:10px 14px;border-radius:10px;outline:2px solid #a78bfa}
+
+    /* Nav */
     .nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:50;width:min(1100px,92%)}
     .nav-inner{backdrop-filter:blur(16px);background:var(--glass);display:flex;justify-content:space-between;align-items:center;border-radius:16px;padding:12px 16px;border:1px solid rgba(255,255,255,.12);box-shadow:0 6px 24px rgba(0,0,0,.25)}
     .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px}
     .nav-links{display:flex;gap:18px}
 
+    /* Logo */
     .logo-atom{width:32px;height:32px;filter:drop-shadow(0 0 6px rgba(124,58,237,.35));transform-origin:center}
     .logo-atom .orbit{animation:orbit 14s linear infinite}
     .logo-atom .orbit2{animation:orbit 18s linear infinite reverse}
@@ -38,10 +70,13 @@
     @keyframes orbit{to{transform:rotate(360deg)}}
     @keyframes pulse{0%,100%{opacity:.55}50%{opacity:.9;filter:drop-shadow(0 0 6px rgba(124,58,237,.6))}}
 
+    /* Buttons */
     .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,var(--primary),#9333ea);color:white;padding:12px 18px;border-radius:14px;font-weight:700;box-shadow:0 10px 24px rgba(124,58,237,.28);transition:transform .2s, box-shadow .2s}
     .btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(124,58,237,.38)}
     .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.22);box-shadow:none}
 
+    /* Hero */
+    header{scroll-margin-top:90px}
     .hero{padding-top:128px;padding-bottom:72px;position:relative;text-align:center}
     .title{font-size:clamp(32px,6vw,56px);line-height:1.08;font-weight:800;margin:0}
     .gradient-text{background:linear-gradient(90deg,#fff,#d6bcff 60%, #67e8f9);-webkit-background-clip:text;color:transparent}
@@ -49,6 +84,7 @@
     .hero-cta{display:flex;gap:12px;margin-top:26px;justify-content:center;flex-wrap:wrap}
     .hero-cta .btn{margin-bottom:14px}
 
+    /* Sections */
     section{padding:80px 0;border-top:1px solid rgba(255,255,255,.08);scroll-margin-top:90px}
     .section-head{text-align:center;margin-bottom:36px}
     .h2{font-size:clamp(26px,4vw,40px);margin:8px 0}
@@ -63,28 +99,23 @@
 
     footer{text-align:center;padding:70px 20px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
 
+    /* Inputs */
     .input{width:100%;padding:14px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:var(--text);transition:border-color .2s, box-shadow .2s}
     .input:focus{border-color:var(--ring);outline:none;box-shadow:0 0 0 4px var(--ring)}
 
     /* INTRO FULLSCREEN */
-    .intro{
-      position:fixed;inset:0;
-      background:
+    .intro{position:fixed;inset:0;background:
         radial-gradient(1200px 700px at 80% -10%, rgba(124,58,237,.18), transparent),
         radial-gradient(1200px 700px at 0% 100%, rgba(6,182,212,.18), transparent),
-        #070b18;
-      z-index:100;display:grid;place-items:center;perspective:900px;will-change:opacity;
-    }
+        #070b18;z-index:100;display:grid;place-items:center;perspective:900px;will-change:opacity}
     .intro-stage{position:relative;width:100vw;height:100vh}
-    /* Canvas ocupa TODA la ventana, sin sombras ni bordes */
-    #introCanvas{
-      position:absolute;inset:0;width:100vw;height:100vh;display:block;filter:none;outline:none;border:none
-    }
+    #introCanvas{position:absolute;inset:0;width:100vw;height:100vh;display:block;filter:none;outline:none;border:none}
     .intro-caption{position:absolute;left:0;right:0;bottom:8%;display:grid;place-items:center;text-align:center;pointer-events:none}
     .intro-title{font-size:clamp(28px,5vw,44px);margin:6px 0 0;background:linear-gradient(90deg,#fff,#cbb3ff 60%,#67e8f9);-webkit-background-clip:text;color:transparent;letter-spacing:.4px;text-shadow:0 6px 26px rgba(124,58,237,.18)}
     .intro-sub{color:#b7c0d6;margin:4px 0 0}
-    .intro.hide{animation:introOut .7s ease forwards}
+    .intro.hide{animation:introOut .6s ease forwards}
     @keyframes introOut{to{opacity:0;transform:scale(.98);visibility:hidden}}
+    .skip-intro{position:absolute;right:14px;top:14px;z-index:110;background:rgba(0,0,0,.45);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:8px 10px;font-weight:600;cursor:pointer}
 
     /* Testimonials */
     .carousel{position:relative;overflow:hidden;padding-top:12px}
@@ -95,9 +126,12 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- Intro animation -->
-  <div class="intro" id="intro">
+  <div class="intro" id="intro" aria-label="Intro animation">
     <div class="intro-stage">
+      <button class="skip-intro" id="skipIntro" aria-label="Skip intro">Skip</button>
       <canvas id="introCanvas" aria-hidden="true"></canvas>
       <div class="intro-caption" aria-live="polite">
         <h1 class="intro-title">Solverive</h1>
@@ -105,19 +139,16 @@
       </div>
     </div>
   </div>
+  <noscript><style>.intro{display:none}</style></noscript>
 
   <!-- Nav -->
-  <nav class="nav">
+  <nav class="nav" aria-label="Primary">
     <div class="nav-inner">
       <div class="logo" aria-label="Solverive">
         <svg class="logo-atom" width="28" height="28" viewBox="0 0 84 84" aria-hidden="true">
           <defs>
-            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#06b6d4"/><stop offset="1" stop-color="#7c3aed"/>
-            </linearGradient>
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06b6d4"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
           </defs>
           <g filter="url(#glow)">
             <circle cx="42" cy="42" r="7" fill="url(#lg)" />
@@ -135,89 +166,131 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero container">
-    <h1 class="title reveal">Boost Your Business with <span class="gradient-text">Solverive AI</span></h1>
-    <p class="subtitle reveal">We make artificial intelligence simple and effective for companies of all sizes — from smart automation to digital marketing campaigns that drive growth.</p>
-    <div class="hero-cta reveal">
-      <a href="#contact" class="btn">Get Started</a>
-      <a href="#services" class="btn btn-outline">Learn More</a>
-    </div>
-  </header>
-
-  <!-- Services -->
-  <section id="services" class="container">
-    <div class="section-head">
-      <h2 class="h2">Our Services</h2>
-      <p class="lead">Tailored AI solutions that boost productivity and visibility, even if you’re new to digital tools.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card"><div class="icon">⚙️</div><h3>Automation</h3><p class="muted">Streamline repetitive tasks like scheduling, reporting, and customer support with smart AI tools.</p></div>
-      <div class="card"><div class="icon">📢</div><h3>Digital Marketing</h3><p class="muted">Reach more clients with AI-powered campaigns, personalized content, and optimized social media strategies.</p></div>
-      <div class="card"><div class="icon">🤝</div><h3>Advisory</h3><p class="muted">Guidance for businesses exploring digital transformation — no technical background required.</p></div>
-    </div>
-  </section>
-
-  <!-- Benefits -->
-  <section id="benefits" class="container">
-    <div class="section-head">
-      <h2 class="h2">Why Choose Us</h2>
-      <p class="lead">We combine technology and human creativity to deliver results that are practical, measurable, and aligned with your goals.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card"><h3>Time Savings</h3><p class="muted">Focus on what matters while AI takes care of the repetitive work.</p></div>
-      <div class="card"><h3>More Reach</h3><p class="muted">Expand your online presence with campaigns designed to attract and retain customers.</p></div>
-      <div class="card"><h3>Easy Adoption</h3><p class="muted">Our solutions are designed to be simple and effective, even for teams new to digital tools.</p></div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" class="container">
-    <div class="section-head"><h2 class="h2">What Our Clients Say</h2></div>
-    <div class="carousel" aria-label="Testimonials">
-      <div class="carousel-track" id="carousel">
-        <article class="slide card"><p class="quote">“Solverive helped us automate daily tasks and we saved hours every week.”</p><div class="muted">— Small Business Owner</div></article>
-        <article class="slide card"><p class="quote">“Our marketing campaigns are now more effective and we’ve reached new clients faster.”</p><div class="muted">— Marketing Manager</div></article>
-        <article class="slide card"><p class="quote">“Even with little digital experience, adopting AI was simple and practical.”</p><div class="muted">— Retail Shop Owner</div></article>
-        <article class="slide card"><p class="quote">“We reduced support response times by 40% thanks to smart automations.”</p><div class="muted">— Customer Success Lead</div></article>
-        <article class="slide card"><p class="quote">“Clear roadmap and quick wins. Our team adopted the tools in days.”</p><div class="muted">— Operations Director</div></article>
-        <article class="slide card"><p class="quote">“Personalized content doubled our engagement across social channels.”</p><div class="muted">— Content Strategist</div></article>
-        <article class="slide card"><p class="quote">“They integrated with our stack seamlessly. Zero friction.”</p><div class="muted">— CTO, Startup</div></article>
-        <article class="slide card"><p class="quote">“Great partner: technical depth and human approach.”</p><div class="muted">— Agency Owner</div></article>
+  <main id="main">
+    <!-- Hero -->
+    <header class="hero container">
+      <h1 class="title">Boost Your Business with <span class="gradient-text">Solverive AI</span></h1>
+      <p class="subtitle">We make artificial intelligence simple and effective for companies of all sizes — from smart automation to digital marketing campaigns that drive growth.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn" aria-label="Get started with Solverive">Get Started</a>
+        <a href="#services" class="btn btn-outline">Learn More</a>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Contact -->
-  <section id="contact" class="container">
-    <div class="section-head"><h2 class="h2">Let’s Work Together</h2><p class="lead">Ready to start your journey with AI? Contact us today and we’ll guide you step by step.</p></div>
-    <div class="container-edge-safe" style="max-width:640px;margin:0 auto">
-      <form name="contact" method="POST" data-netlify="true" class="card">
-        <input type="hidden" name="form-name" value="contact" />
-        <div style="display:grid;gap:14px">
-          <input name="name" required placeholder="Your name" class="input"/>
-          <input type="email" name="email" required placeholder="Your email" class="input"/>
-          <textarea name="message" rows="4" placeholder="Tell us about your needs" class="input"></textarea>
-          <button class="btn" style="justify-content:center">Send</button>
+    <!-- Services -->
+    <section id="services" class="container" aria-labelledby="services-title">
+      <div class="section-head">
+        <h2 id="services-title" class="h2">Our Services</h2>
+        <p class="lead">Tailored AI solutions that boost productivity and visibility, even if you’re new to digital tools.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card" aria-label="Automation"><div class="icon">⚙️</div><h3>Automation</h3><p class="muted">Streamline repetitive tasks like scheduling, reporting, and customer support with smart AI tools.</p></div>
+        <div class="card" aria-label="Digital Marketing"><div class="icon">📢</div><h3>Digital Marketing</h3><p class="muted">Reach more clients with AI-powered campaigns, personalized content, and optimized social media strategies.</p></div>
+        <div class="card" aria-label="Advisory"><div class="icon">🤝</div><h3>Advisory</h3><p class="muted">Guidance for businesses exploring digital transformation — no technical background required.</p></div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section id="benefits" class="container" aria-labelledby="benefits-title">
+      <div class="section-head">
+        <h2 id="benefits-title" class="h2">Why Choose Us</h2>
+        <p class="lead">We combine technology and human creativity to deliver results that are practical, measurable, and aligned with your goals.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>Time Savings</h3><p class="muted">Focus on what matters while AI takes care of the repetitive work.</p></div>
+        <div class="card"><h3>More Reach</h3><p class="muted">Expand your online presence with campaigns designed to attract and retain customers.</p></div>
+        <div class="card"><h3>Easy Adoption</h3><p class="muted">Our solutions are designed to be simple and effective, even for teams new to digital tools.</p></div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="container" aria-labelledby="testimonials-title">
+      <div class="section-head"><h2 id="testimonials-title" class="h2">What Our Clients Say</h2></div>
+      <div class="carousel" aria-label="Testimonials carousel">
+        <div class="carousel-track" id="carousel">
+          <article class="slide card"><p class="quote">“Solverive helped us automate daily tasks and we saved hours every week.”</p><div class="muted">— Small Business Owner</div></article>
+          <article class="slide card"><p class="quote">“Our marketing campaigns are now more effective and we’ve reached new clients faster.”</p><div class="muted">— Marketing Manager</div></article>
+          <article class="slide card"><p class="quote">“Even with little digital experience, adopting AI was simple and practical.”</p><div class="muted">— Retail Shop Owner</div></article>
+          <article class="slide card"><p class="quote">“We reduced support response times by 40% thanks to smart automations.”</p><div class="muted">— Customer Success Lead</div></article>
+          <article class="slide card"><p class="quote">“Clear roadmap and quick wins. Our team adopted the tools in days.”</p><div class="muted">— Operations Director</div></article>
+          <article class="slide card"><p class="quote">“Personalized content doubled our engagement across social channels.”</p><div class="muted">— Content Strategist</div></article>
+          <article class="slide card"><p class="quote">“They integrated with our stack seamlessly. Zero friction.”</p><div class="muted">— CTO, Startup</div></article>
+          <article class="slide card"><p class="quote">“Great partner: technical depth and human approach.”</p><div class="muted">— Agency Owner</div></article>
         </div>
-      </form>
-    </div>
-  </section>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container" aria-labelledby="contact-title">
+      <div class="section-head"><h2 id="contact-title" class="h2">Let’s Work Together</h2>
+        <p class="lead">Ready to start your journey with AI? Contact us today and we’ll guide you step by step.</p>
+      </div>
+      <div class="container-edge-safe" style="max-width:640px;margin:0 auto">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="card">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden" style="display:none">
+            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+          </p>
+          <div style="display:grid;gap:14px">
+            <label>
+              <span class="sr-only">Your name</span>
+              <input name="name" required placeholder="Your name" class="input" autocomplete="name" />
+            </label>
+            <label>
+              <span class="sr-only">Your email</span>
+              <input type="email" name="email" required placeholder="Your email" class="input" autocomplete="email" />
+            </label>
+            <label>
+              <span class="sr-only">Message</span>
+              <textarea name="message" rows="4" placeholder="Tell us about your needs" class="input"></textarea>
+            </label>
+            <button class="btn" style="justify-content:center">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>© <span id="year"></span> Solverive. All rights reserved.</p>
   </footer>
 
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Solverive",
+    "url":"https://solverive.com",
+    "logo":"https://solverive.com/logo.png",
+    "sameAs":[]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Solverive",
+    "url":"https://solverive.com",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://solverive.com/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+
   <script>
+    // Year
     document.getElementById('year').textContent=new Date().getFullYear();
 
-    // ---- Testimonials carousel auto-advance ----
+    // ---- Testimonials carousel (auto cuando es visible) ----
     (function(){
       const track = document.getElementById('carousel');
       if(!track) return;
       const originals = Array.from(track.children);
-      originals.forEach(s => track.appendChild(s.cloneNode(true)));
-      let index = 0, timer;
+      originals.forEach(s => track.appendChild(s.cloneNode(true))); // loop
+      let index = 0, timer, active = false;
       const intervalMs = 3000, transitionMs = 600;
       const gap = () => parseFloat(getComputedStyle(track).gap)||0;
       const step = () => track.children[0].getBoundingClientRect().width + gap();
@@ -226,139 +299,136 @@
         track.style.transform  = `translateX(${-i * step()}px)`;
       }
       function next(){
+        if(!active) return;
         index++; goTo(index,true);
         if(index >= originals.length){ setTimeout(()=>{ index = 0; goTo(index,false); }, transitionMs + 20); }
       }
-      function start(){ stop(); timer = setInterval(next, intervalMs); }
-      function stop(){ clearInterval(timer); }
+      const start = ()=>{ if(!active){ active=true; timer=setInterval(next, intervalMs);} };
+      const stop  = ()=>{ active=false; clearInterval(timer); };
       track.addEventListener('mouseenter', stop);
       track.addEventListener('mouseleave', start);
       track.addEventListener('touchstart', stop, {passive:true});
       track.addEventListener('touchend', start);
+
+      // inicia solo cuando el contenedor es visible
+      const obs = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting) start(); else stop(); });
+      }, {threshold:.2});
+      obs.observe(track);
+
       window.addEventListener('resize', ()=>goTo(index,false));
-      goTo(0,false); start();
-      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ stop(); track.style.transition='none'; track.style.transform='none'; }
+      goTo(0,false);
+
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        stop(); track.style.transition='none'; track.style.transform='none';
+      }
     })();
 
-    // ---- Intro FULLSCREEN Big Bang ----
+    // ---- Intro FULLSCREEN Big Bang con "Skip" ----
     (function(){
       const overlay = document.getElementById('intro');
+      const skipBtn = document.getElementById('skipIntro');
       const canvas  = document.getElementById('introCanvas');
       if(!canvas || !overlay) return;
       const ctx = canvas.getContext('2d');
 
-      // Ajusta el canvas a 100vw x 100vh con resolución de dispositivo
+      // Canvas DPR
       function resizeCanvas(){
         const dpr = Math.max(1, window.devicePixelRatio || 1);
-        const cssW = window.innerWidth;
-        const cssH = window.innerHeight;
+        const cssW = window.innerWidth, cssH = window.innerHeight;
         canvas.width  = Math.floor(cssW * dpr);
         canvas.height = Math.floor(cssH * dpr);
         canvas.style.width  = '100vw';
         canvas.style.height = '100vh';
-        ctx.setTransform(dpr,0,0,dpr,0,0); // trabajar en coords CSS
+        ctx.setTransform(dpr,0,0,dpr,0,0);
       }
-      resizeCanvas();
-      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas(); window.addEventListener('resize', resizeCanvas);
 
       let t=0; const fov=420;
       let phase='galaxy';
-      const galaxyDuration=1100, expandDuration=1100, fadeDuration=800;
-      let phaseStart=performance.now();
+      const galaxyDuration=900, expandDuration=900, fadeDuration=600;
+      let phaseStart=performance.now(); let canceled=false;
 
-      // Partículas para la galaxia suave
+      // Partículas
       const parts=[];
-      function initParticles(){
-        parts.length = 0;
-        for(let i=0;i<260;i++){
-          const radius=40+Math.random()*210, angle=Math.random()*Math.PI*2, height=(Math.random()-.5)*70;
-          parts.push({x:Math.cos(angle)*radius,y:height,z:Math.sin(angle)*radius,hue:i%2?200:280,alpha:.6+.25*Math.random()});
-        }
+      for(let i=0;i<220;i++){
+        const radius=40+Math.random()*210, angle=Math.random()*Math.PI*2, height=(Math.random()-.5)*70;
+        parts.push({x:Math.cos(angle)*radius,y:height,z:Math.sin(angle)*radius,hue:i%2?200:280,alpha:.6+.25*Math.random()});
       }
-      initParticles();
 
-      function getSize(){
-        const W = canvas.clientWidth, H = canvas.clientHeight;
-        return {W, H, cx:W/2, cy:H/2};
-      }
-      const project=(p, size)=>{const z=p.z+300, s=fov/(fov+z);return {x:size.cx+p.x*s,y:size.cy+p.y*s,s};};
+      function size(){const W=canvas.clientWidth,H=canvas.clientHeight;return {W,H,cx:W/2,cy:H/2};}
+      const project=(p,s)=>{const z=p.z+300,sc=fov/(fov+z);return {x:s.cx+p.x*sc,y:s.cy+p.y*sc,s:sc};};
       const easeOutCubic=t=>1-Math.pow(1-t,3);
 
-      function drawGalaxy(size){
-        // fondo
-        ctx.fillStyle='rgba(7,11,24,.45)'; ctx.fillRect(0,0,size.W,size.H);
-
-        // órbita
+      function drawGalaxy(s){
+        ctx.fillStyle='rgba(7,11,24,.45)'; ctx.fillRect(0,0,s.W,s.H);
         ctx.save(); ctx.strokeStyle='rgba(167,139,250,.14)'; ctx.lineWidth=1;
         ctx.beginPath();
         for(let a=0;a<Math.PI*2;a+=.025){
-          const q=project({x:Math.cos(a)*160,y:Math.sin(a)*40,z:Math.sin(a)*160}, size);
-          if(a===0)ctx.moveTo(q.x,q.y);else ctx.lineTo(q.x,q.y);
+          const q=project({x:Math.cos(a)*160,y:Math.sin(a)*40,z:Math.sin(a)*160}, s);
+          if(a===0)ctx.moveTo(q.x,q.y); else ctx.lineTo(q.x,q.y);
         } ctx.stroke(); ctx.restore();
-
-        // núcleo
-        const n=project({x:0,y:0,z:0}, size);
+        const n=project({x:0,y:0,z:0}, s);
         const g=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,26);
         g.addColorStop(0,'rgba(255,255,255,.9)'); g.addColorStop(1,'rgba(124,58,237,.1)');
-        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(n.x,n.y,10*n.s+1.4*Math.sin(t*.12),0,Math.PI*2); ctx.fill();
-
-        // partículas
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(n.x,n.y,10*n.s+1.2*Math.sin(t*.12),0,Math.PI*2); ctx.fill();
         ctx.globalCompositeOperation='lighter';
         for(const p of parts){
-          const ang=Math.atan2(p.z,p.x)+.006, rad=Math.hypot(p.x,p.z);
-          p.x=Math.cos(ang)*rad; p.z=Math.sin(ang)*rad; p.y+=Math.sin(t*.01+p.x*.01)*.04;
-          const q=project(p, size); const r=1.0*q.s*2;
+          const ang=Math.atan2(p.z,p.x)+.006, r=Math.hypot(p.x,p.z);
+          p.x=Math.cos(ang)*r; p.z=Math.sin(ang)*r; p.y+=Math.sin(t*.01+p.x*.01)*.04;
+          const q=project(p,s); const rr=1*q.s*2;
           ctx.beginPath(); ctx.fillStyle=`hsla(${p.hue},80%,70%,${p.alpha})`;
           ctx.shadowBlur=10; ctx.shadowColor='rgba(124,58,237,.45)';
-          ctx.arc(q.x,q.y,r,0,Math.PI*2); ctx.fill();
+          ctx.arc(q.x,q.y,rr,0,Math.PI*2); ctx.fill();
         }
         ctx.globalCompositeOperation='source-over'; ctx.shadowBlur=0;
         return n;
       }
 
-      function drawBang(center, size, progress){
-        ctx.fillStyle='#070b18'; ctx.fillRect(0,0,size.W,size.H);
-        const maxR = Math.hypot(size.W, size.H);
-        const r = 8 + easeOutCubic(progress) * maxR;
-        const g = ctx.createRadialGradient(center.x,center.y,0, center.x,center.y, Math.max(1,r));
+      function drawBang(center,s,progress){
+        ctx.fillStyle='#070b18'; ctx.fillRect(0,0,s.W,s.H);
+        const maxR=Math.hypot(s.W,s.H), r=8+easeOutCubic(progress)*maxR;
+        const g=ctx.createRadialGradient(center.x,center.y,0,center.x,center.y,Math.max(1,r));
         g.addColorStop(0,'rgba(255,255,255,0.95)');
         g.addColorStop(0.22,'rgba(199,167,255,0.70)');
         g.addColorStop(0.55,'rgba(124,58,237,0.35)');
         g.addColorStop(1,'rgba(124,58,237,0.0)');
-        ctx.fillStyle=g; ctx.beginPath(); ctx.rect(0,0,size.W,size.H); ctx.fill();
+        ctx.fillStyle=g; ctx.beginPath(); ctx.rect(0,0,s.W,s.H); ctx.fill();
       }
 
+      function endIntro(){
+        canceled=true; overlay.classList.add('hide'); setTimeout(()=>overlay.remove(),650);
+      }
+      skipBtn.addEventListener('click', endIntro);
+      overlay.addEventListener('click', endIntro); // tap to skip
+
       function loop(now){
-        const size = getSize();
-        const elapsed = now - phaseStart;
+        if(canceled) return;
+        const s=size(); const elapsed=now-phaseStart;
 
         if(phase==='galaxy'){
-          const nucleus = drawGalaxy(size); t++;
+          const nucleus = drawGalaxy(s); t++;
           if(elapsed>=galaxyDuration){ phase='bang'; phaseStart=now; loop.nucleus = nucleus; }
           requestAnimationFrame(loop); return;
         }
-
         if(phase==='bang'){
-          const prog = Math.min(1, elapsed/expandDuration);
-          drawBang(loop.nucleus || {x:size.cx,y:size.cy}, size, prog);
-          if(prog<1){ requestAnimationFrame(loop); }
-          else { phase='fade'; phaseStart=now; requestAnimationFrame(loop); }
+          const prog=Math.min(1,elapsed/expandDuration);
+          drawBang(loop.nucleus || {x:s.cx,y:s.cy}, s, prog);
+          if(prog<1){ requestAnimationFrame(loop); } else { phase='fade'; phaseStart=now; requestAnimationFrame(loop); }
           return;
         }
-
         if(phase==='fade'){
-          const prog = Math.min(1, elapsed/fadeDuration);
-          overlay.style.opacity = String(1 - prog);
-          if(prog<1){ requestAnimationFrame(loop); } else { overlay.remove(); }
-          return;
+          const prog=Math.min(1,elapsed/fadeDuration);
+          overlay.style.opacity=String(1-prog);
+          if(prog<1){ requestAnimationFrame(loop); } else { endIntro(); }
         }
       }
 
-      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-        overlay.style.opacity='0'; setTimeout(()=>overlay.remove(),100); return;
-      }
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ endIntro(); return; }
       requestAnimationFrame(loop);
     })();
+
+    // NOTE: en Cloudflare → SSL/TLS: activar "Always Use HTTPS" y modo "Full" para forzar HTTPS.
   </script>
 </body>
 </html>
