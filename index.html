@@ -8,13 +8,12 @@
   <link rel="icon" type="image/png" href="./mascot.png"/>
   <style>
     :root{
-      --bg:#f08030;  /* extracted from logo */
+      --bg:#f08030;
       --bg2:#f18c44;
       --panel:#ffffff;
       --ink:#0f172a;
       --muted:#6b7280;
-      --primary:#111827;
-      --radius:14px;
+      --radius:16px;
       --ring:0 0 0 1px rgba(15,23,42,.06), 0 1px 2px rgba(15,23,42,.08), 0 8px 24px rgba(15,23,42,.08);
     }
     *{box-sizing:border-box}
@@ -28,112 +27,58 @@
         radial-gradient(900px 420px at 15% -10%, var(--bg2), transparent 60%) fixed,
         linear-gradient(180deg, var(--bg2), var(--bg)) fixed;
     }
-    .wrap{width:100%; max-width:820px}
+    .wrap{width:100%; max-width:760px}
     .header{display:flex; align-items:center; gap:16px; margin-bottom:14px}
-    h1{font-size:28px; margin:0; font-weight:700}
+    h1{font-size:28px; margin:0; font-weight:800}
+    .logo{width:60px; height:60px; border-radius:12px; object-fit:contain}
 
-    /* Stage for articulated mascot */
-    .stage{position:relative; width:220px; height:220px; flex:0 0 220px}
-    .layer{position:absolute; inset:0; background:url('./mascot.png') center/contain no-repeat; will-change:transform; transform-origin:center}
-    .body{z-index:1;} /* base */
-    /* Clip paths (percentages tuned to approximate limbs) */
-    .arm-left{clip-path: polygon(0% 20%, 40% 20%, 48% 40%, 20% 48%); transform-origin: 32% 38%; z-index:3;}
-    .arm-right{clip-path: polygon(60% 18%, 100% 15%, 100% 45%, 75% 42%); transform-origin: 76% 36%; z-index:3;}
-    .leg-left{clip-path: polygon(28% 65%, 46% 65%, 48% 100%, 24% 100%); transform-origin: 36% 74%; z-index:2;}
-    .leg-right{clip-path: polygon(54% 64%, 72% 64%, 74% 100%, 52% 100%); transform-origin: 62% 74%; z-index:2;}
-    .crown{clip-path: polygon(28% 0%, 72% 0%, 68% 18%, 32% 18%); transform-origin: 50% 8%; z-index:4;}
-
-    /* Apply animations */
-    .arm-left{ animation: wave-left 1.6s ease-in-out infinite }
-    .arm-right{ animation: wave-right 1.6s ease-in-out infinite }
-    .leg-left{ animation: step 1.6s ease-in-out infinite }
-    .leg-right{ animation: stepR 1.6s ease-in-out infinite }
-    .crown{ animation: tilt 1.6s ease-in-out infinite }
-    .body{ animation: tilt 1.6s ease-in-out infinite }
-
-    /* Panel */
     .panel{background:var(--panel); border-radius:var(--radius); box-shadow:var(--ring); padding:22px; border:1px solid rgba(2,6,23,.06)}
-    p.lead{margin:0 0 16px 0; color:var(--muted)}
-    .group{margin-bottom:16px}
-    .group label{display:block; font-weight:600; margin-bottom:6px}
-    .row{display:flex; gap:8px; align-items:center}
-    input{flex:1; padding:12px 14px; border:1px solid rgba(2,6,23,.14); border-radius:12px; font-size:16px; outline:none; background:#fff}
-    input:focus{border-color: var(--primary); box-shadow:0 0 0 3px rgba(17,24,39,.15)}
-    input[readonly]{background:#f8f9fa}
-    .btn{padding:12px 16px; border-radius:12px; border:1px solid rgba(2,6,23,.14); background:#fff; color:var(--ink); font-weight:600; cursor:pointer}
+    .lead{margin:0 0 18px 0; color:var(--muted)}
+
+    .qr-wrap{display:grid; place-items:center; gap:14px; padding:18px; border-radius:14px; background:#fff}
+    .qr{width:min(360px, 80vw); aspect-ratio:1/1; border-radius:12px; box-shadow:0 1px 2px rgba(15,23,42,.08), 0 8px 24px rgba(15,23,42,.06); background:#fff}
+
+    .cta{margin-top:18px; display:grid; gap:10px}
+    .btn{padding:14px 16px; border-radius:12px; border:1px solid rgba(2,6,23,.14); background:#fff; color:var(--ink); font-weight:700; cursor:pointer; text-align:center; text-decoration:none}
     .btn:hover{background:#f3f4f6}
-    .btn.primary{background:#111827; color:#fff; border:none; width:100%}
+    .btn.primary{background:#111827; color:#fff; border:none}
     .btn.primary:hover{background:#0f172a}
-    .actions{margin-top:12px}
-    .muted{font-size:12px; color:var(--muted); margin-top:4px}
     .fineprint{text-align:center; margin-top:12px; color:rgba(0,0,0,.75); font-size:12px}
 
     @media (max-width: 720px) {
       .header{flex-direction:column; align-items:flex-start}
-      .stage{width:180px; height:180px}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="header">
-      <div class="stage" aria-label="Mascota articulada">
-        <div class="layer body"></div>
-        <div class="layer arm-left"></div>
-        <div class="layer arm-right"></div>
-        <div class="layer leg-left"></div>
-        <div class="layer leg-right"></div>
-        <div class="layer crown"></div>
-      </div>
+      <img src="./mascot.png" alt="Logo" class="logo" />
       <h1>Transferime por Mercado Pago</h1>
     </div>
 
     <div class="panel">
-      <p class="lead">Abrí Mercado Pago con un clic. <strong>Te copio el alias y (opcional) el monto</strong> al portapapeles para pegar en el campo.</p>
+      <p class="lead">Escaneá el QR o tocá el botón para abrir directamente el link de pago.</p>
 
-      <div class="group">
-        <label for="alias">Alias de Mercado Pago</label>
-        <div class="row">
-          <input id="alias" value="basketnaranja" readonly aria-label="Alias de Mercado Pago" />
-          <button class="btn" id="copyAlias">Copiar</button>
-        </div>
+      <div class="qr-wrap">
+        <img class="qr" src="./qr.png" alt="QR de pago Mercado Pago" />
       </div>
 
-      <div class="group">
-        <label for="amount">Monto</label>
-        <div class="row">
-          <input id="amount" inputmode="decimal" placeholder="3000" readonly aria-label="Monto a transferir" />
-          <button class="btn" id="copyAmount">Copiar</button>
-        </div>
-        <div class="muted">Dejalo vacío si la persona va a elegir el monto.</div>
+      <div class="cta">
+        <a class="btn primary" id="openPayment" href="https://mpago.la/2gWsByC" target="_blank" rel="noopener noreferrer">Pagar ahora</a>
+        <button class="btn" id="copyLink" type="button" aria-label="Copiar link de pago">Copiar link</button>
       </div>
 
-      <div class="actions">
-        <button class="btn primary" id="openMP">Abrir transferencia en Mercado Pago</button>
-      </div>
-
-      <div class="fineprint">Transferencias entre cuentas de Mercado Pago no tienen comisión. Esta página no guarda datos.</div>
+      <p class="fineprint">Las transferencias/link de pago se procesan en Mercado Pago. Esta página no guarda datos.</p>
     </div>
   </div>
 
   <script>
-    const aliasEl = document.getElementById('alias');
-    const amountEl = document.getElementById('amount');
-    async function copy(text){
-      try{ await navigator.clipboard.writeText(text); }catch(e){}
-    }
-    document.getElementById('copyAlias').addEventListener('click', ()=> copy(aliasEl.value));
-    document.getElementById('copyAmount').addEventListener('click', ()=> copy((amountEl.value||'0').toString().trim()));
-    document.getElementById('openMP').addEventListener('click', async ()=>{
-      let text = aliasEl.value.trim();
-      const amt = amountEl.value.trim();
-      if (amt) text += ' · ' + amt;
-      await copy(text);
-      window.open(
-        'https://www.mercadopago.com.ar/money-transfer', 
-        '_blank',                                        
-        'noopener,noreferrer'                            
-      );
+    const PAYMENT_URL = 'https://mpago.la/2gWsByC';
+    document.getElementById('copyLink').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(PAYMENT_URL);
+      } catch(e) {}
     });
   </script>
 </body>
